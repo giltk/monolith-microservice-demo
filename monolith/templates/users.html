@@ -1,0 +1,15 @@
+<!doctype html>
+<title>Hello from Flask</title>
+{% if method == 'POST' %}
+  <h1>users list:</h2>
+  {% for user in user_list %}
+  <div>
+      <p>{{ user }}</p>
+  </div>
+  {% endfor %}
+{% else %}
+  <h1>Click to get user list</h1>
+  <form action="/users/" method="POST">
+    <button type="submit">Get users List</button>
+</form>
+{% endif %}
